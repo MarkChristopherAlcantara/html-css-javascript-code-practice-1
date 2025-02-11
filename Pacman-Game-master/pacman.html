@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>PacMan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" charset="utf-8"></script>
+    <style>
+      @media (max-width: 600px) {
+        #start-msg {
+          display: none;
+        }
+        #start-button {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="back-button" onclick="window.location.href='../../index.html'">Back</button>
+    <div class="overlay-screen" id="start-screen">
+      <h1>PACMAN</h1>
+      <h2 id="start-msg">Press ENTER to start</h2>
+      <h2>Use arrow keys to move</h2>
+      <button id="start-button" style="display: none;" onclick="startGame()">Start</button>
+    </div>
+    <div class="game-container">
+      <div class="grid"></div>
+      <h2>Score:<span id="score">0</span></h2>
+      <h2 id="life-counter">Lives: <span id="lives">3</span></h2>
+    </div>
+    <div class="overlay-screen" id="game-over-screen">
+      <span>GAME OVER!</span>
+    </div>
+    <div class="overlay-screen" id="you-won-screen">
+      <span>YOU WON!</span>
+    </div>
+    <div id="cooldown-text">Reviving...</div>
+  </body>
+</html>

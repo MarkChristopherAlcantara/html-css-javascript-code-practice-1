@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-selection {
+            text-align: center;
+        }
+
+        .game-selection h1 {
+            margin-bottom: 20px;
+        }
+
+        .game-selection button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #5cb85c;
+            color: #fff;
+        }
+
+        .game-selection button:hover {
+            background-color: #4cae4c;
+        }
+
+        @media (max-width: 600px) {
+            .game-selection h1 {
+                font-size: 24px;
+            }
+
+            .game-selection button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        // Check if the user is logged in
+        window.onload = function() {
+            if (!sessionStorage.getItem('loggedIn')) {
+                window.location.href = 'login.html';
+            }
+        };
+
+        function logout() {
+            sessionStorage.removeItem('loggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="game-selection">
+        <h1>Select a Game</h1>
+        <button onclick="window.location.href='tetris.html'">Play Tetris</button>
+        <button onclick="window.location.href='Pacman-Game-master/pacman.html'">Play Pac-Man</button>
+        <button onclick="logout()">Log Out</button>
+    </div>
+</body>
+</html>
